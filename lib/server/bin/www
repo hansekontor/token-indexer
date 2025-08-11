@@ -16,9 +16,9 @@ const wsController = require('../controllers/wsController')
 
 
 class Server {
-  	constructor(ticketIndexer) {
-		ticketIndexer.db.init();
-		var app = App(ticketIndexer);
+  	constructor(indexer) {
+		indexer.db.init();
+		var app = App(indexer);
 
 		/**
 		 * Get port from environment and store in Express and create HTTPS server
@@ -46,7 +46,7 @@ class Server {
 		 */
 
 		// const wss = new WebSocket.Server({ server });
-		// wss.on('connection', wsController(ticketIndexer));
+		// wss.on('connection', wsController(indexer));
 
 		/**
 		 * Listen on provided port, on all network interfaces.
