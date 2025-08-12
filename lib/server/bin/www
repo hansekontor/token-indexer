@@ -23,7 +23,7 @@ class Server {
 		/**
 		 * Get port from environment and store in Express and create HTTPS server
 		 */
-		const isDeveloperMode = process.env.NODE_ENV === "development";
+		const isDeveloperMode = true; //process.env.NODE_ENV === "development";
 
 		var httpPort = normalizePort(process.env.HTTP_PORT || '8000');
 		var httpsPort = normalizePort(process.env.HTTPS_PORT || '3000');
