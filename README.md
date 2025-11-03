@@ -1,5 +1,41 @@
 # Token Indexer for bcash node
 
-This indexer is built as a plugin for the [bcash node](https://github.com/badger-cash/bcash). It indexes specified tokens transactions by hash and address.
+This indexer is built as a plugin for the [bcash node](https://github.com/badger-cash/bcash). It indexes specified token transactions by hash and address. 
 
-## Indexed Data
+## Installation
+Prerequisite is an installation of [Redis](https://redis.io/docs/latest/operate/oss_and_stack/install/archive/install-redis/install-redis-on-linux/).
+
+
+Clone this repository on an instance where this [bcash node](https://github.com/hansekontor/bcash) is installed. 
+
+```
+git clone https://github.com/hansekontor/token-indexer
+```
+
+Then install the module with 
+
+```
+cd token-indexer
+npm install
+```
+
+Create a `.env` file and modify its properties according to your needs.
+
+```
+cp sample_env .env
+nano .env
+```
+
+If you do not make any changes to the `.env`file, the token-indexer will later be running on `localhost:8000`.
+
+If both, bcash and the token-indexer are available in the same path, the plugin can be attached to bcash with this command: 
+
+```
+${PWD}/bcash/bin/bcash --index-tx=true --index-address=true --index-slp=true --plugins=${PWD}/token-indexer/lib/plugin
+```
+
+## Endpoints
+
+- for transactions: /v1/tx/[hash]
+- for transactions by address: /v1/tx/address/[eCash address]
+- for indexer rollback: /rollback/[height]
