@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/hansekontor/token-indexer#readme",
   "dependencies": {
-    "bcash": "badger-cash/bcash",
+    "bcash": "github:badger-cash/bcash#ecash",
     "bcrypto": "^5.5.2",
     "bdb": "^1.6.0",
     "bevent": "^0.1.6",
@@ -37,7 +37,9 @@
     "http-errors": "^2.0.0",
     "http-proxy-middleware": "^3.0.3",
     "install": "^0.13.0",
+    "ioredis": "^5.8.2",
     "morgan": "^1.10.0",
+    "n64": "^0.2.10",
     "ws": "^8.18.0"
   }
 }
