@@ -19,3 +19,7 @@ REDIS_DB = 1
 # API_KEY is required to use rollback
 API_KEY =
 
+# Token Configuration
+# TOKEN_ID = 0dbbeca4adccfbf4820c0a748ea5921204bed98e319bbd0879f7010d4297ed31 # MUSD
+TOKEN_ID = 4075459e0ac841f234bc73fc4fe46fe5490be4ed98bc8ca3f9b898443a5a381a # BUXs
+TOKEN_GENESIS_HEIGHT = 798428
