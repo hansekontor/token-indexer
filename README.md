@@ -35,7 +35,9 @@ ${PWD}/bcash/bin/bcash --index-tx=true --index-address=true --index-slp=true --p
 ```
 
 ## Endpoints
-
-- for transactions: /v1/tx/[hash]
-- for transactions by address: /v1/tx/address/[eCash address]
-- for indexer rollback: /rollback/[height]
+| Method | Endpoint                  | Description                                                                                        |
+|--------|---------------------------|----------------------------------------------------------------------------------------------------|
+| GET    | /tx/{hash}                | Returns transaction with slp data if it contains the token specified in `env`                      |
+| GET    | /tx/address/{address}     | Returns all token transactions in which an address was involved                                    |
+| GET    | /coin/address/{address}   | Returns all utxos for an address                                                                   |
+| GET    | /rollback/height/{height} | Initiates `token-indexer` rollback to the specified height, endpoint can be restricted via API key |
